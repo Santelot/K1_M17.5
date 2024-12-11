@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .banner .title {
+            font-size: 1.2em;
+            display: flex;
+            justify-content: space-between;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 5px;
+            border-top: 1px solid white;
+            padding-top: 5px;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .step-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        .dialogue {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: right;
+            font-style: italic;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+            margin-left: 10px;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 8px; border: 1px solid #ddd; vertical-align: top; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Playbook - K1 - M17.5</h1>
+
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateContent()">
+                <option value="50">50 minutos</option>
+                <option value="40">40 minutos</option>
+                <option value="30">30 minutos</option>
+            </select>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1</option>
+                <option value="K2">K2</option>
+                <option value="K3">K3</option>
+            </select>
+        </div>
+
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+        <h2 id="selected-level" class="level-title">Nivel: K1</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0 -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales ⏰ Tiempo: N/A</div>
+        <div class="subtitle">Asegúrate de tener listos todos los materiales indicados en la DIAPOSITIVA 1 antes de iniciar la misión.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Asegúrate de tener listos todos los materiales indicados en la Diapositiva 1 antes de iniciar la misión.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1 -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: Bienvenida e Introducción ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Dar la bienvenida a los niños, presentar el enfoque del día y preparar sus mentes para la actividad.</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la Diapositiva 2 “Bienvenida” y saluda a los niños mientras muestras el logo de Gnius Club, luego introduce el tema del día y la necesidad de entrenar el cerebro para la misión.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Hola, CODE SQUAD! Bienvenidos al cuartel general. Hoy vamos a embarcarnos en una misión muy especial en Artivilla, el pueblo donde todo está lleno de color. Pero, ¡oh no! Algo extraño ha pasado en el Carnaval de Colores. Las carrozas no pueden avanzar porque algunos cuadros mágicos se han perdido. ¡Necesitamos su ayuda para resolver este problema juntos! Vamos a empezar entrenando nuestros cerebros."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la Diapositiva 3 "Gimnasio CODE SQUAD" e introduce la importancia de entrenar el cerebro antes de enfrentar el reto del día.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Genios del CODE SQUAD! Antes de comenzar nuestra misión, vamos a hacer un pequeño entrenamiento para que nuestras mentes estén listas. Vamos a escuchar una canción muy especial que nos enseñará a seguir patrones. ¡Pongan mucha atención y sigamos las indicaciones juntos! ¿Listos para empezar?"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2 -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-secuenciacion')">
+        <div class="title">🎶 Actividad 2: Baile de Algoritmos ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Preparar a los niños para la misión con un ejercicio de algoritmos a través de un baile.</div>
+    </div>
+    <div id="baile-secuenciacion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la Diapositiva 4 “Baile de Algoritmos” e introduce la canción que seguiremos hoy.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Muy bien, CODE SQUAD! Ahora que estamos listos, vamos a movernos al ritmo de una canción muy especial. Cada movimiento que hagamos representa un cuadro del Carnaval de Colores. Sigan las instrucciones, ¡y recuerden que lo más importante es divertirse mientras aprendemos!"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">👨‍🎨 Actividad 3: Planteamiento del Problema ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Introducir a los niños en el contexto de la misión utilizando la historia.</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1 minuto):</strong> Reproduce la DIAPOSITIVA 5, adopta la actitud de cuenta cuentos y narra la historia.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¡Genios del CODE SQUAD! Bienvenidos a Artivilla, un pueblo lleno de color y creatividad. Aquí, cada año, se celebra el Carnaval de Colores, el evento más esperado del año. Nuestro amigo el Señor Pincel ha decorado las calles con cuadros mágicos que forman patrones vibrantes para guiar las carrozas. Pero algo inesperado ocurrió... Esta mañana, un grupo de monitos traviesos escapó del circo cercano y descolgó algunos cuadros mágicos, dejando huecos en los patrones. ¡Sin esos cuadros, las carrozas no podrán desfilar por las calles! El Señor Pincel necesita nuestra ayuda para reconstruir los patrones y salvar el carnaval."
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Reproduce la DIAPOSITIVA 6 y explica el reto para motivar al CODE SQUAD.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¡CODE SQUAD! Para que el Carnaval de Colores pueda continuar, necesitamos reconstruir los patrones mágicos de las calles. Vamos a usar las fichas para representar los cuadros mágicos: un pez, una tortuga, una mariposa, un colibrí y una rana. Cada cuadro tiene un lugar específico en el patrón, y debemos copiarlos primero en papel para asegurarnos de que estén en el orden correcto. Luego, construiremos los patrones en el suelo para que Dart pueda guiar las carrozas. ¡Manos a la obra, CODE SQUAD!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: Formación de Parejas ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Explicar la importancia del trabajo en equipo en parejas y asegurar la organización.</div>
+    </div>
+    <div id="formacion-parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la DIAPOSITIVA 7 “Formación de Equipos”, explica la importancia de trabajar en equipo y junta a los niños en pares. Si el número es impar, integra un trío para asegurar que todos tengan compañeros.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¡Equipo CODE SQUAD! Hoy, tenemos una misión que requiere mucha colaboración. ¿Sabían que “dos cabezas piensan mejor que una”? Cuando trabajamos juntos, podemos combinar nuestras ideas y hacer cosas asombrosas. ¡Imaginen que cada uno de ustedes es como una pieza de un rompecabezas mágico! Al juntar las piezas, logramos completar algo único y maravilloso.
+Ahora, busquen a un amigo para formar un equipo. Si son un número impar, no se preocupen, ¡formaremos un trío especial! ¡Manos a la obra, CODE SQUAD!"
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Verifica que todos los niños estén emparejados y organizados para trabajar.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                "¿Todos encontraron una pareja? Si no, ¡recuerden que un trío también es un gran equipo! Ahora que están organizados, vamos a recordar algo importante: trabajar en equipo significa compartir, escuchar, y ayudarse unos a otros. ¡Entre más trabajen juntos, más increíble será la misión! ¡CODE SQUAD, listos para empezar!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('codigo_visual')">
+        <div class="title">🎨 Actividad 5: Reto de Codificación ⏰ Tiempo: Variable <span id="activity-5-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Introducir los retos de codificación según la edad y trabajar con fichas de ruta.</div>
+    </div>
+    <div id="codigo_visual" class="content">
+        <table id="activity-5-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6 -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('intercambio_construccion')">
+        <div class="title">🔄 Actividad 6: Intercambio de Códigos y Construcción ⏰ Tiempo: Variable <span id="activity-6-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Intercambio de códigos entre equipos y práctica de programación con fichas de ruta.</div>
+    </div>
+    <div id="intercambio_construccion" class="content">
+        <table id="activity-6-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7 -->
+<div id="activity-7" class="activity">
+    <div class="banner" onclick="toggleContent('obstaculo_historia')">
+        <div class="title">⚠️ Actividad 7: Mensaje del Cuartel ⏰ Tiempo: Variable <span id="activity-7-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Introducir un obstáculo en la narrativa para mantener el interés y la motivación.</div>
+    </div>
+    <div id="obstaculo_historia" class="content">
+        <table id="activity-7-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 8 -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion_reflexion')">
+        <div class="title">🏁 Actividad 8: Conclusión de la Historia y Reflexión ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Cierre de la misión y reflexión sobre lo aprendido durante la clase.</div>
+    </div>
+    <div id="conclusion_reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la DIAPOSITIVA 25 y cierra la historia como cuenta cuentos. Realiza preguntas para reflexionar sobre lo aprendido.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                    "¡Lo logramos, CODE SQUAD! Gracias a su esfuerzo y trabajo en equipo, los cuadros mágicos han vuelto a formar un camino brillante y colorido para las carrozas. El Señor Pincel está emocionado y los monitos aprendieron que con respeto y creatividad pueden ser parte del carnaval. ¡Las carrozas están desfilando ahora entre aplausos y música! Ahora reflexionemos juntos:
+1. ¿Qué aprendimos al resolver el problema del carnaval?
+2. ¿Por qué fue importante seguir el código paso a paso?
+3. ¿Cómo nos ayudó trabajar en equipo?"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+               <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            } else {
+            content.style.display = "block";
+        }
+    }
+
+    function updateContent() {
+        var time = document.getElementById("class-time").value;
+        var level = document.getElementById("class-level").value;
+        document.getElementById("selected-time").innerText = "Tiempo efectivo de clase: " + time + " minutos";
+        document.getElementById("selected-level").innerText = "Nivel: " + level;
+
+        var steps = {
+    "K1": {
+        "5.1": [
+            {
+                "step": 1,
+                "time": { "30": 1, "40": 1, "50": 1 },
+                "accion": "Reproduce la DIAPOSITIVA 8 y explica cómo crear el código para resolver el reto",
+                "dialogo": "¡CODE SQUAD! Para que el Señor Pincel pueda reconstruir los patrones mágicos y guiar las carrozas en el desfile, vamos a crear un código para ayudarlo a representar sus cuadros. Así como mi ejemplo, vamos a utilizar fichas de camino (rectas y esquinas) para representar cada cuadro (colibrí, pez, rana). Ustedes pueden elegir las fichas que quieran siguiendo el patrón. ¡Vamos a demostrar lo geniales que somos creando códigos mágicos!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "¡Aquí tienen su papel y colores, CODE SQUAD! Ahora, en sus hojas, dibujen las pinturas (colibrí, pez, rana). Luego, pongan un símbolo "=" al lado y las fichas que representarán cada pintura. ¡Prepárense para codificar los caminos mágicos del carnaval!"
+            },
+            {
+                "step": 3,
+                "time": { "30": 5, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 10 y supervisa la creación del código en pares. Ayuda a los equipos mientras dibujan y asignan fichas de ruta.",
+                "dialogo": "¡Muy bien, CODE SQUAD! Ahora trabajen juntos para crear su código. Dibujen cada pintura, escriban el símbolo "=" y añadan las fichas que las representen. ¡Qué emocionante ver cómo forman los caminos mágicos del desfile! Recuerden compartir ideas con sus parejas y asegurarse de que sus códigos sean claros y divertidos."
+            }
+        ],
+        "6": [
+            {
+                "step": 1,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 17 y dirige a los Genios para que intercambien los códigos que hicieron.",
+                "dialogo": "¡CODE SQUAD! ¡Qué geniales están quedando sus códigos mágicos! Ahora, para ayudar al Señor Pincel a organizar el desfile, vamos a hacer algo muy especial. Cada equipo usará el código de otro equipo para asegurarse de que los cuadros se coloquen en el orden correcto. Voy a recoger sus códigos y luego asignarles uno nuevo. ¡Es hora de demostrar su habilidad para interpretar los códigos mágicos!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 18 y distribuye los códigos asignados para que cada equipo comience a construir.",
+                "dialogo": "¡Adelante, CODE SQUAD! Usen el código que recibieron para construir el camino mágico del desfile. Recuerden, cada ficha representa una parte del cuadro: rectas para el colibrí, esquinas para el pez y tortuga. Sigan el patrón del código y asegúrense de que las carrozas puedan seguir el camino mágico. ¡Confío en ustedes, equipo!"
+            }
+        ],
+        "7": [
+            {
+                "step": 1,
+                "time": { "30": 3, "40": 4, "50": 5 },
+                "accion": "Reproduce la DIAPOSITIVA 21 y explica el obstáculo a los Genios.",
+                "dialogo": "¡CODE SQUAD! ¡Tenemos una situación urgente! Los traviesos monitos regresaron al carnaval y en su travesura, movieron algunos cuadros mágicos y desordenaron el patrón del camino. ¡Oh, no! Si no arreglamos este desastre, las carrozas no podrán avanzar. Pero no se preocupen, el cuartel general nos ha enviado un nuevo código mágico para solucionar el problema. ¡Vamos a trabajar juntos y a resolverlo!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 22 “Código de Rescate K1” y motiva a los Genios que sigan el nuevo código proyectado en la pantalla.",
+                "dialogo": "¡CODE SQUAD! Miren la pantalla, aquí está el nuevo código mágico que nos ayudará a reconstruir el camino. Cada ficha representa una parte del cuadro: las rectas son para el colibrí y las esquinas para el pez. Sigamos el código paso a paso y coloquemos las fichas en el orden correcto para que las carrozas puedan continuar. ¡Ustedes pueden hacerlo, equipo!"
+            }
+        ]
+    },
+   "K2": {
+        "5.2": [
+            {
+                "step": 1,
+                "time": { "30": 1, "40": 1, "50": 1 },
+                "accion": "Reproduce la DIAPOSITIVA 11 y explica cómo crear el código para resolver el reto.",
+                "dialogo": "¡CODE SQUAD! Para que el Señor Pincel pueda completar los patrones mágicos más grandes y guiar a las carrozas, vamos a crear un código para ayudarlo a representar sus cuadros. En este reto utilizaremos fichas de camino (rectas, curvas simples y esquinas) para las pinturas (colibrí, pez, tortuga, rana). ¡Cada pintura tiene su secuencia mágica! ¡Manos a la obra!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 12, distribuye los materiales y asegúrate de que todos tengan lo necesario.",
+                "dialogo": "¡CODE SQUAD! Aquí tienen sus hojas y colores. Dibujen las pinturas (colibrí, pez, tortuga, rana). Añadan el símbolo "=" y las fichas (recta, curva simple, esquina) que representan cada pintura. ¡Listos para crear el camino mágico del carnaval!"
+            },
+            {
+                "step": 3,
+                "time": { "30": 5, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 13 y supervisa la creación del código en pares. Ayuda a los equipos mientras dibujan y asignan fichas de ruta.",
+                "dialogo": "¡Qué bien, CODE SQUAD! Ahora dibujen cada pintura con cuidado, escriban el símbolo "=" y elijan las fichas (recta, curva simple, esquina) que las representarán. Trabajen en equipo, presten atención al patrón y completen juntos este desafío mágico. ¡Vamos, que lo están haciendo genial!"
+            }
+        ],
+        "6": [
+            {
+                "step": 1,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 17 y dirige a los Genios para que intercambien los códigos que hicieron.",
+                "dialogo": "¡CODE SQUAD! ¡Qué geniales están quedando sus códigos mágicos! Ahora, para ayudar al Señor Pincel a organizar el desfile, vamos a hacer algo muy especial. Cada equipo usará el código de otro equipo para asegurarse de que los cuadros se coloquen en el orden correcto. Voy a recoger sus códigos y luego asignarles uno nuevo. ¡Es hora de demostrar su habilidad para interpretar los códigos mágicos!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 19 y distribuye los códigos asignados para que cada equipo comience a construir.",
+                "dialogo": "¡Genial, CODE SQUAD! Ahora, sigan el código que les asignaron para construir el camino del desfile. Recuerden que las curvas simples representan las alas del colibrí, las rectas son para el pez, y las esquinas para la tortuga y la rana. ¡Vamos a hacerlo juntos y asegurarnos de que las carrozas encuentren el camino!"
+            }
+        ],
+        "7": [
+            {
+                "step": 1,
+                "time": { "30": 3, "40": 4, "50": 5 },
+                "accion": "Reproduce la DIAPOSITIVA 21 y explica el obstáculo a los Genios.",
+                "dialogo": "¡CODE SQUAD! ¡Tenemos una situación urgente! Los traviesos monitos regresaron al carnaval y en su travesura, movieron algunos cuadros mágicos y desordenaron el patrón del camino. ¡Oh, no! Si no arreglamos este desastre, las carrozas no podrán avanzar. Pero no se preocupen, el cuartel general nos ha enviado un nuevo código mágico para solucionar el problema. ¡Vamos a trabajar juntos y a resolverlo!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 23 “Código de Rescate K2” y motiva a los Genios que sigan el nuevo código proyectado en la pantalla.",
+                "dialogo": "¡Excelente, CODE SQUAD! Ahora, con este nuevo código mágico, vamos a reconstruir un camino más completo. Las curvas simples son para el colibrí, las rectas para el pez, y las esquinas para la tortuga. Recuerden trabajar en equipo y seguir el código con cuidado. ¡A construir el camino mágico para que las carrozas puedan seguir su desfile!"
+            }
+        ]
+},
+    "K3": {
+        "5.3": [
+            {
+                "step": 1,
+                "time": { "30": 1, "40": 1, "50": 1 },
+                "accion": "Reproduce la DIAPOSITIVA 14 y explica cómo crear el código para resolver el reto.",
+                "dialogo": "¡CODE SQUAD! El Señor Pincel necesita un código aún más detallado para las carrozas del desfile. Vamos a representar sus pinturas (colibrí, pez, tortuga, rana, mariposa) usando fichas de camino (rectas, curvas dobles, esquinas y una ficha de retorno). ¡Ustedes son los mejores para resolver este reto mágico!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 15, distribuye los materiales y asegúrate de que todos tengan lo necesario.",
+                "dialogo": "¡CODE SQUAD! Aquí tienen todo lo necesario para crear el camino más mágico del desfile. Dibujen cada pintura (colibrí, pez, tortuga, rana, mariposa), escriban el símbolo "=" y añadan las fichas (recta, curva doble, esquina, retorno) que las representan. ¡Vamos a construir algo fantástico!"
+            },
+            {
+                "step": 3,
+                "time": { "30": 5, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 16 y supervisa la creación del código en pares. Ayuda a los equipos mientras dibujan y fichas de ruta.",
+                "dialogo": "¡Fantástico, CODE SQUAD! Dibujen sus pinturas con mucho cuidado, escriban el símbolo "=" y añadan las fichas (recta, curva doble, esquina, retorno). Verifiquen que su código siga perfectamente el patrón del carnaval. ¡Van a crear algo mágico!"
+            }
+        ],
+        "6": [
+            {
+                "step": 1,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 17 y dirige a los Genios para que intercambien los códigos que hicieron.",
+                "dialogo": "¡CODE SQUAD! ¡Qué geniales están quedando sus códigos mágicos! Ahora, para ayudar al Señor Pincel a organizar el desfile, vamos a hacer algo muy especial. Cada equipo usará el código de otro equipo para asegurarse de que los cuadros se coloquen en el orden correcto. Voy a recoger sus códigos y luego asignarles uno nuevo. ¡Es hora de demostrar su habilidad para interpretar los códigos mágicos!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 20 y distribuye los códigos asignados para que cada equipo comience a construir.",
+                "dialogo": "¡CODE SQUAD, este es el desafío final! Usen el código que les asignaron para construir el camino más mágico y detallado del desfile. Las curvas dobles representan el vuelo del colibrí, las esquinas para el pez, las curvas simples para la rana y la ficha de retorno para la mariposa. ¡Trabajen en equipo para asegurarse de que todo quede perfecto!"
+            }
+        ],
+        "7": [
+            {
+                "step": 1,
+                "time": { "30": 3, "40": 4, "50": 5 },
+                "accion": "Reproduce la DIAPOSITIVA 21 y explica el obstáculo a los Genios.",
+                "dialogo": "¡CODE SQUAD! ¡Tenemos una situación urgente! Los traviesos monitos regresaron al carnaval y en su travesura, movieron algunos cuadros mágicos y desordenaron el patrón del camino. ¡Oh, no! Si no arreglamos este desastre, las carrozas no podrán avanzar. Pero no se preocupen, el cuartel general nos ha enviado un nuevo código mágico para solucionar el problema. ¡Vamos a trabajar juntos y a resolverlo!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 24 y motiva a los Genios a construir el nuevo código con bloques siguiendo el patrón proyectado.",
+                "dialogo": "¡CODE SQUAD! Este es el reto final. Miren el código mágico que nos enviaron: las curvas dobles son para el vuelo del colibrí, las esquinas para el pez, las curvas simples para la rana, y la ficha de retorno para la mariposa. Trabajen juntos para colocar las fichas en el orden correcto y asegúrense de que las carrozas puedan seguir su camino mágico. ¡Lo están haciendo increíble!"
+            }
+        ]
+    }
+};
+
+
+
+        // Mostrar u ocultar actividades según el nivel seleccionado
+        var activities = {
+            "activity-0": true,
+            "activity-1": true,
+            "activity-2": true,
+            "activity-3": true,
+            "activity-4": true,
+            "activity-5": true,
+            "activity-6": true,
+            "activity-7": steps[level]["7"].some(s => s.time[time] > 0),
+            "activity-8": true
+        };
+
+        Object.keys(activities).forEach(function(activityId) {
+            var activityElement = document.getElementById(activityId);
+            if (activities[activityId]) {
+                activityElement.style.display = "block";
+            } else {
+                activityElement.style.display = "none";
+            }
+        });
+
+        // Renderizar los pasos dinámicamente en las tablas de actividades 5, 6 y 7
+        renderActivitySteps("activity-5-content", steps[level]["5." + (level === "K1" ? 1 : level === "K2" ? 2 : 3)], time);
+        renderActivitySteps("activity-6-content", steps[level]["6"], time);
+        renderActivitySteps("activity-7-content", steps[level]["7"], time);
+
+        document.getElementById("activity-5-total-time").innerText = calculateTotalTime(steps[level]["5." + (level === "K1" ? 1 : level === "K2" ? 2 : 3)], time) + " minutos";
+        document.getElementById("activity-6-total-time").innerText = calculateTotalTime(steps[level]["6"], time) + " minutos";
+        document.getElementById("activity-7-total-time").innerText = calculateTotalTime(steps[level]["7"], time) + " minutos";
+    }
+
+    function renderActivitySteps(contentId, steps, time) {
+        var contentContainer = document.getElementById(contentId);
+        contentContainer.innerHTML = "";
+        steps.forEach(function(step) {
+            if (step.time[time] > 0) {
+                var row = document.createElement("tr");
+                var stepCell = document.createElement("td");
+                var dialogCell = document.createElement("td");
+
+                stepCell.innerHTML = "<strong>PASO " + step.step + " (" + step.time[time] + " minutos):</strong> " + step.accion;
+                dialogCell.innerHTML = "<strong>DIÁLOGO SUGERIDO:</strong> " + step.dialogo;
+
+                row.appendChild(stepCell);
+                row.appendChild(dialogCell);
+                contentContainer.appendChild(row);
+            }
+        });
+    }
+
+    function calculateTotalTime(steps, time) {
+        return steps.reduce((total, step) => total + step.time[time], 0);
+    }
+
+    updateContent();
+</script>
